@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Задание 1 -->
+    <button onclick="alert('Нажатие')">Нажатие</button>
+    <button onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor=''">Наведение</button>
+    <button onmousedown="this.style.transform='scale(1.2)'" onmouseup="this.style.transform='scale(1)'">Зажатие</button>
+
+    <!-- Задание 2 -->
+    <body onkeydown="changeColor(event)" onkeyup="resetColor()">
+        <h1>Нажмите любую из следующих букв:</h1>
+        <ul>
+          <li>R</li>
+          <li>G</li>
+          <li>B</li>
+        </ul>
+      </body>
+
+    <script>
+        function changeColor(e) {
+            const key = e.key.toLowerCase();
+            if (key === 'r') {
+                document.body.style.backgroundColor = 'red';
+            } else if (key === 'g') {
+                document.body.style.backgroundColor = 'green';
+            } else if (key === 'b') {
+                document.body.style.backgroundColor = 'blue';
+            }
+            }
+
+            function resetColor() {
+            document.body.style.backgroundColor = 'white';
+        }
+
+    </script>
+
+    <!-- Задание 3 -->
+    <section class="btn">
+        <div id="btn">
+
+        </div>
+    </section>
+
+    <script>
+        let x = 0;
+    let y = 0;
+    document.addEventListener('keydown', function (event) {
+        switch (event.key) {
+            case 'w':
+                y -= 10;
+                break;
+            case 'd':
+                x += 10;
+                break;
+            case 's':
+                y += 10;
+                break;
+            case 'a':
+                x -= 10;
+                break;
+        }
+        btn.style.top = `${y}px`;
+        btn .style.left = `${x}px`;
+    })
+
+    </script>
+
+</body>
+</html>
